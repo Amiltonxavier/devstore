@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import CartWidget from './cart-widget'
+import { SearchForm } from './search-form'
 
 export default function Header() {
     return (
@@ -11,11 +12,7 @@ export default function Header() {
                 <Link href="/" className='text-2xl font-semibold text-white'>
                     devstore
                 </Link>
-                <form action="" className='flex w-[320px] items-center gap-3 rounded-full bg-zinc-900 px-5 py-3 ring-zinc-700'>
-                    <Search className='size-5 text-zinc-500' />
-                    <input type="search" name="" id="" className='flex-1 bg-transparent placeholder:text-zinc-500 outline-none' placeholder='Buscar produtos...' />
-
-                </form>
+                <SearchForm />
             </div>
             <div className='flex items-center gap-4'>
                 <CartWidget />
