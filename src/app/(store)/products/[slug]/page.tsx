@@ -4,7 +4,8 @@ import { api } from '@/data/api';
 import { ProductsResponse } from '@/types';
 import { Metadata } from 'next';
 import AddToCartButton from '@/app/components/add-to-cart-button';
-import CartSidebar from '@/app/components/cart-sidebar';
+
+
 interface ProductProps {
   params: {
     slug: string

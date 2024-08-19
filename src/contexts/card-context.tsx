@@ -21,13 +21,22 @@ type CartProviderProps = {
 const CardContext = createContext({ } as cardContextProps)
 
 
+/* async function getProductsByID(productId: number){
+    const response = await api(`/products/by/${productId}`, {
+        next: {
+            revalidate: 60 * 60
+        }
+    })
+    const data = await response.json()
+    return data;
+} */
 
 
 export  function CartProvider({children}:CartProviderProps ) {
     const [cartItems, setCartItems] = useState<CartItem[]>([])
 
     function addCart(productId: number) {
-        setCartItems((state) => {
+         setCartItems((state) => {
             const productInCart = state.some((item) => item.productId === productId)
 
             if(productInCart){
@@ -41,7 +50,7 @@ export  function CartProvider({children}:CartProviderProps ) {
             }else {
                return [...state, { productId, quantity: + 1 }] 
             }
-        })
+        }) 
     }
 
   return (
